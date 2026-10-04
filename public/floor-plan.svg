@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustrasi denah rumah</title>
+  <desc id="desc">Denah konseptual rumah satu lantai dengan dua kamar tidur, ruang keluarga, dapur, kamar mandi, dan carport.</desc>
+  <rect width="1200" height="760" fill="#f4f1eb"/>
+  <text x="72" y="74" fill="#1c2c39" font-family="Arial, sans-serif" font-size="25" letter-spacing="5">GRAND ARUNIKA RESIDENCE</text>
+  <text x="72" y="118" fill="#8a7559" font-family="Arial, sans-serif" font-size="17" letter-spacing="3">ILUSTRASI DENAH KONSEPTUAL</text>
+  <g transform="translate(145 175)" fill="#fff" stroke="#1c2c39" stroke-width="9" stroke-linejoin="round">
+    <rect x="0" y="0" width="900" height="470"/>
+    <path d="M0 225h330M330 0v470M330 225h280M610 225v245M330 0h300M630 0v225M610 345h290M760 0v225" fill="none"/>
+  </g>
+  <g fill="#1c2c39" font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="310" y="285" font-size="24">KAMAR TIDUR 1</text>
+    <text x="310" y="318" font-size="16">Ruang privat keluarga</text>
+    <text x="310" y="505" font-size="24">RUANG KELUARGA</text>
+    <text x="310" y="538" font-size="16">Area berkumpul</text>
+    <text x="610" y="285" font-size="24">KAMAR TIDUR 2</text>
+    <text x="610" y="318" font-size="16">Ruang istirahat</text>
+    <text x="610" y="505" font-size="21">DAPUR &amp; MAKAN</text>
+    <text x="610" y="538" font-size="16">Terhubung ke keluarga</text>
+    <text x="850" y="285" font-size="21">KAMAR MANDI</text>
+    <text x="850" y="505" font-size="21">CARPORT</text>
+    <text x="850" y="538" font-size="16">1 mobil</text>
+  </g>
+  <text x="600" y="710" fill="#65717a" font-family="Arial, sans-serif" font-size="15" text-anchor="middle">Gambar ilustrasi untuk contoh konten. Silakan ganti dengan denah resmi setiap tipe.</text>
+</svg>
