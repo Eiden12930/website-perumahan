@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const categories = ["Semua", "Exterior", "Interior", "Siteplan", "Fasilitas", "Lingkungan", "Construction Progress"];
 
 export default function GaleriPage() {
-  const { gallery } = useSiteContent();
+  const { gallery, projectData } = useSiteContent();
   const [activeCategory, setActiveCategory] = useState("Semua");
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
@@ -34,7 +34,7 @@ export default function GaleriPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6">Galeri Proyek</h1>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Jelajahi keindahan arsitektur dan fasilitas premium di Grand Arunika melalui galeri foto kami.
+            Jelajahi gambar hunian dan fasilitas {projectData.name} melalui galeri foto kami.
           </p>
         </div>
 

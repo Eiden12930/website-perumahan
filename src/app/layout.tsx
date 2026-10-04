@@ -13,20 +13,20 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfa
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Grand Arunika Residence | Hunian Modern Tropis",
-    template: "%s | Grand Arunika Residence",
+    default: "Perumahan by Duta Griya Idaman",
+    template: "%s | Perumahan by Duta Griya Idaman",
   },
   description: "Temukan hunian modern tropis untuk keluarga di Jakarta Selatan. Lihat tipe rumah, fasilitas, lokasi, dan jadwalkan kunjungan.",
-  keywords: ["perumahan", "rumah", "properti", "Jakarta Selatan", "Grand Arunika Residence"],
+  keywords: ["perumahan", "rumah", "properti", "Duta Griya Idaman"],
   openGraph: {
     type: "website",
     locale: "id_ID",
-    siteName: "Grand Arunika Residence",
-    title: "Grand Arunika Residence | Hunian Modern Tropis",
-    description: "Hunian modern tropis untuk masa depan keluarga Anda.",
-    images: [{ url: fallbackProjectData.heroImage, width: 1200, height: 630, alt: "Grand Arunika Residence" }],
+    siteName: "Perumahan by Duta Griya Idaman",
+    title: "Perumahan by Duta Griya Idaman",
+    description: fallbackProjectData.description,
+    images: [{ url: fallbackProjectData.heroImage, width: 1200, height: 630, alt: "Perumahan by Duta Griya Idaman" }],
   },
-  twitter: { card: "summary_large_image", title: "Grand Arunika Residence", description: "Hunian modern tropis di Jakarta Selatan.", images: [fallbackProjectData.heroImage] },
+  twitter: { card: "summary_large_image", title: "Perumahan by Duta Griya Idaman", description: fallbackProjectData.description, images: [fallbackProjectData.heroImage] },
   robots: { index: true, follow: true },
 };
 
@@ -46,7 +46,7 @@ export default async function RootLayout({
           name: projectData.name,
           description: projectData.description,
           address: { "@type": "PostalAddress", streetAddress: projectData.address, addressLocality: projectData.location, addressCountry: "ID" },
-          telephone: `+${projectData.whatsappNumber}`,
+          telephone: `+${projectData.phoneNumber}`,
           email: projectData.email,
           url: siteUrl,
         }).replace(/</g, "\\u003c") }} />

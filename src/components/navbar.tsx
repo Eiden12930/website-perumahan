@@ -49,7 +49,10 @@ export default function Navbar() {
                 solid ? "text-primary" : "text-white"
               }`}
             >
-              {projectData.name.toUpperCase()}
+              <span className="flex flex-col leading-none">
+                <span className="font-serif text-xl md:text-2xl font-bold tracking-tight">{projectData.name}</span>
+                <span className="mt-1 font-sans text-[10px] md:text-xs font-semibold tracking-[0.12em]">by {projectData.developer}</span>
+              </span>
             </span>
           </Link>
 

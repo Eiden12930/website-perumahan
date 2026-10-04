@@ -4,7 +4,7 @@ import { useSiteContent } from "@/components/content-provider";
 
 export default function WhatsAppButton() {
   const { projectData } = useSiteContent();
-  const defaultMessage = encodeURIComponent("Halo, saya tertarik dengan project perumahan Grand Arunika. Mohon informasi lebih lanjut.");
+  const defaultMessage = encodeURIComponent(`Halo, saya tertarik dengan ${projectData.name} by ${projectData.developer}. Mohon informasi lebih lanjut.`);
   const whatsappUrl = `https://wa.me/${projectData.whatsappNumber}?text=${defaultMessage}`;
 
   return (

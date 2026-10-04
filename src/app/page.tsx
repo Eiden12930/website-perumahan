@@ -23,7 +23,7 @@ export default function Home() {
     const type = String(values.get("type") || "Belum menentukan tipe");
     const budget = String(values.get("budget") || "Belum ditentukan");
     const visitDate = String(values.get("visitDate") || "Belum dijadwalkan");
-    const message = encodeURIComponent(`Halo, saya ingin informasi Grand Arunika Residence.\nNama: ${name}\nWhatsApp: ${phone}\nTipe rumah: ${type}\nBudget: ${budget}\nJadwal kunjungan: ${visitDate}`);
+    const message = encodeURIComponent(`Halo, saya ingin informasi ${projectData.name} by ${projectData.developer}.\nNama: ${name}\nWhatsApp: ${phone}\nTipe rumah: ${type}\nBudget: ${budget}\nJadwal kunjungan: ${visitDate}`);
     window.open(`https://wa.me/${projectData.whatsappNumber}?text=${message}`, "_blank", "noopener,noreferrer");
   }
 
@@ -67,7 +67,7 @@ export default function Home() {
               <Link href="#kontak">Hubungi Sales</Link>
             </Button>
             <Button size="lg" className="w-full sm:w-auto bg-[#25D366] text-white hover:bg-[#128C7E] text-lg h-14 px-8" asChild>
-              <a href={`https://wa.me/${projectData.whatsappNumber}?text=${encodeURIComponent("Halo, saya tertarik dengan Grand Arunika Residence. Mohon informasi lebih lanjut.")}`} target="_blank" rel="noopener noreferrer">WhatsApp Sales</a>
+              <a href={`https://wa.me/${projectData.whatsappNumber}?text=${encodeURIComponent(`Halo, saya tertarik dengan ${projectData.name} by ${projectData.developer}. Mohon informasi lebih lanjut.`)}`} target="_blank" rel="noopener noreferrer">WhatsApp Sales</a>
             </Button>
           </motion.div>
         </div>
@@ -85,9 +85,9 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
               <h2 className="text-secondary font-semibold tracking-wider uppercase mb-3">Tentang Proyek</h2>
-              <h3 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-primary">Keseimbangan Sempurna antara Alam dan Modernitas</h3>
+              <h3 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-primary">{projectData.aboutTitle}</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                {projectData.name} dirancang khusus untuk Anda yang mendambakan kualitas hidup terbaik. Dengan konsep modern tropis, setiap sudut hunian dimaksimalkan untuk pencahayaan alami dan sirkulasi udara yang menyegarkan.
+                {projectData.aboutDescription}
               </p>
               <ul className="space-y-4 mb-8">
                 {['Lokasi Strategis di Jakarta Selatan', 'Fasilitas Premium & Eksklusif', 'Investasi Menguntungkan', 'Desain Arsitektur Modern'].map((item, i) => (
@@ -149,7 +149,7 @@ export default function Home() {
       <section className="py-24 bg-accent/50">
         <div className="container mx-auto px-4 md:px-8 grid lg:grid-cols-2 gap-12 items-center">
           <div><p className="text-secondary font-semibold tracking-wider uppercase mb-3">Lokasi Terhubung</p><h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-5">Dekat dengan hal penting dalam hidup Anda</h2><p className="text-gray-600 leading-relaxed mb-7">Akses praktis ke jalan tol, pusat belanja, sekolah, dan layanan kesehatan di Jakarta Selatan.</p><Button asChild><Link href="/lokasi">Jelajahi Lokasi <ArrowRight className="ml-2 w-4 h-4" /></Link></Button></div>
-          <div className="relative h-[340px] rounded-2xl overflow-hidden shadow-lg"><iframe title="Peta Grand Arunika Residence" src={projectData.mapEmbedUrl} className="absolute inset-0 w-full h-full border-0" loading="lazy" referrerPolicy="no-referrer-when-downgrade" /></div>
+          <div className="relative h-[340px] rounded-2xl overflow-hidden shadow-lg"><iframe title={`Peta ${projectData.name}`} src={projectData.mapEmbedUrl} className="absolute inset-0 w-full h-full border-0" loading="lazy" referrerPolicy="no-referrer-when-downgrade" /></div>
         </div>
       </section>
 
@@ -206,7 +206,7 @@ export default function Home() {
               
               <div className="space-y-6">
                 {contactPersons.map((person) => {
-                  const message = encodeURIComponent(`Halo ${person.name}, saya ingin menjadwalkan kunjungan ke Grand Arunika.`);
+                  const message = encodeURIComponent(`Halo ${person.name}, saya ingin menjadwalkan kunjungan ke ${projectData.name}.`);
                   return (
                     <div key={person.id} className="flex items-center gap-6 bg-white/5 p-4 rounded-xl border border-white/10">
                       <div className="relative w-16 h-16 rounded-full overflow-hidden">

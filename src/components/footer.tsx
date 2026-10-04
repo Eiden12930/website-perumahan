@@ -11,7 +11,8 @@ export default function Footer() {
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
-            <h3 className="font-serif text-2xl font-bold mb-6">GRAND ARUNIKA</h3>
+            <h3 className="font-serif text-2xl font-bold mb-2">{projectData.name}</h3>
+            <p className="text-sm text-secondary font-semibold mb-6">by {projectData.developer}</p>
             <p className="text-gray-300 mb-6 max-w-sm">
               {projectData.description}
             </p>
@@ -48,12 +49,12 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-secondary flex-shrink-0" />
-                <span className="text-gray-300">+{projectData.whatsappNumber}</span>
+                <a className="text-gray-300 hover:text-white" href={`tel:+${projectData.phoneNumber}`}>+{projectData.phoneNumber}</a>
               </li>
-              <li className="flex items-center gap-3">
+              {projectData.email && <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-secondary flex-shrink-0" />
                 <a className="text-gray-300 hover:text-white" href={`mailto:${projectData.email}`}>{projectData.email}</a>
-              </li>
+              </li>}
             </ul>
           </div>
           

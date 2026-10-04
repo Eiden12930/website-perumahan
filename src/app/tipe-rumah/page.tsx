@@ -7,14 +7,14 @@ import { useSiteContent } from "@/components/content-provider";
 import { Button } from "@/components/ui/button";
 
 export default function TipeRumahPage() {
-  const { propertyTypes } = useSiteContent();
+  const { propertyTypes, projectData } = useSiteContent();
   return (
     <div className="pt-32 pb-24 min-h-screen bg-accent/50">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6">Tipe Hunian</h1>
           <p className="text-gray-600 text-lg">
-            Temukan desain rumah modern tropis yang sesuai dengan gaya hidup dan kebutuhan keluarga Anda di Grand Arunika.
+            Temukan desain rumah yang sesuai dengan gaya hidup dan kebutuhan keluarga Anda di {projectData.name}.
           </p>
         </div>
 

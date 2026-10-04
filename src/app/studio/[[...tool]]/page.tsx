@@ -1,7 +1,7 @@
 import StudioClient from "./StudioClient";
 
 export const metadata = {
-  title: "Admin Konten | Grand Arunika Residence",
+  title: "Admin Konten | Perumahan by Duta Griya Idaman",
   robots: { index: false, follow: false },
 };
 

@@ -35,8 +35,8 @@ const sanity = projectId
 
 const contentQuery = `{
   "project": *[_type == "project"] | order(_updatedAt desc)[0] {
-    name, tagline, description, location, address, developer, landArea, unitCount, constructionStatus,
-    mapUrl, mapEmbedUrl, whatsappNumber, email, instagram, facebook, youtube,
+    name, tagline, description, aboutTitle, aboutDescription, location, address, developer, landArea, unitCount, constructionStatus,
+    mapUrl, mapEmbedUrl, whatsappNumber, phoneNumber, email, instagram, facebook, youtube,
     "heroImage": heroImage.asset->url
   },
   "propertyTypes": *[_type == "propertyType"] | order(name asc) {
@@ -65,7 +65,7 @@ export async function getSiteContent(): Promise<SiteContent> {
     const result = await sanity.fetch<Record<string, any>>(contentQuery, {}, { cache: "no-store" });
     const project = result.project;
     const projectData = project
-      ? { ...fallbackProjectData, ...project, heroImage: project.heroImage || fallbackProjectData.heroImage, whatsappNumber: project.whatsappNumber || fallbackProjectData.whatsappNumber }
+      ? { ...fallbackProjectData, ...project, heroImage: project.heroImage || fallbackProjectData.heroImage, whatsappNumber: project.whatsappNumber || fallbackProjectData.whatsappNumber, phoneNumber: project.phoneNumber || project.whatsappNumber || fallbackProjectData.phoneNumber }
       : fallbackProjectData;
     const propertyTypes = (result.propertyTypes || []).filter((item: any) => item.slug && item.images?.[0]).map((item: any) => ({ ...item, floorPlan: item.floorPlan || "/floor-plan.svg", specifications: item.specifications || [] }));
     const facilities = (result.facilities || []).filter((item: any) => item.name && item.image);

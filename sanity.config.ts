@@ -6,8 +6,8 @@ import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./src/sanity/schema";
 
 export default defineConfig({
-  name: "grand-arunika",
-  title: "Grand Arunika Residence — Admin",
+  name: "duta-griya-idaman",
+  title: "Perumahan — Duta Griya Idaman | Admin",
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "setup-required",
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
   basePath: "/studio",

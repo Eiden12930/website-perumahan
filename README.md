@@ -1,4 +1,4 @@
-# Grand Arunika Residence
+# Perumahan by Duta Griya Idaman
 
 Website pemasaran perumahan berbasis Next.js 14, React, TypeScript, Tailwind CSS, dan Vercel.
 
@@ -38,7 +38,7 @@ Vercel App di Codex sudah terhubung ke akun, namun linking project Git baru dapa
 
 ## Admin konten
 
-Admin konten berada di `/studio` dan menggunakan Sanity Studio. Pengelola dapat membuat, mengedit, menghapus, serta mengunggah foto untuk informasi proyek, tipe rumah, fasilitas, kontak sales, artikel, dan galeri.
+Admin konten berada di `/studio` dan menggunakan Sanity Studio. Login memakai akun Sanity yang diberi akses ke project; tidak ada kata sandi admin hard-coded di source website. Pengelola dapat mengubah nama brand/developer, tagline, narasi utama, gambar hero, alamat, telepon/WhatsApp, peta, tipe rumah, fasilitas, kontak sales, artikel, dan galeri.
 
 1. Buat project dan dataset publik di [Sanity](https://www.sanity.io/manage).
 2. Salin Project ID dan isi `NEXT_PUBLIC_SANITY_PROJECT_ID` serta `NEXT_PUBLIC_SANITY_DATASET` pada `.env.local` dan Vercel Project Settings → Environment Variables.
