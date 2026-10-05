@@ -49,6 +49,18 @@ Konten yang dipublish di Sanity langsung dipakai halaman publik. Dataset tetap p
 
 ## Data contoh
 
+### Memasukkan data contoh ke Sanity agar bisa diedit
+
+Website memakai data contoh dari `src/data/cms.ts` jika dataset Sanity belum memiliki dokumen. Untuk menyalinnya ke Sanity satu kali, jalankan dari folder repository setelah dependencies terpasang dan login ke Sanity CLI:
+
+```bash
+pnpm install
+pnpm exec sanity login
+pnpm content:seed
+```
+
+Pastikan `.env.local` berisi `NEXT_PUBLIC_SANITY_PROJECT_ID` dan `NEXT_PUBLIC_SANITY_DATASET` untuk project yang benar. Perintah ini membuat dokumen yang belum ada dan mengunggah gambar contoh; dokumen yang sudah ada tidak ditimpa. Gambar lokal `floor-plan.svg` dilewati—unggah gambar denah pengganti lewat Studio bila diperlukan. Setelah selesai, buka `/studio`, edit data pada menu **Informasi Proyek**, **Tipe Rumah**, **Fasilitas**, **Kontak Sales**, **Artikel**, atau **Foto Galeri**, lalu klik **Publish**.
+
 Konten contoh terpusat di `src/data/cms.ts`: proyek, tipe rumah, fasilitas, galeri, artikel, dan contact person. Gambar denah di `public/floor-plan.svg` adalah ilustrasi, bukan gambar teknis resmi. Ganti data contoh dan asset dengan materi proyek yang telah disetujui sebelum situs dipublikasikan.
 
 Jika Project ID belum diisi, situs tetap menggunakan konten contoh di `src/data/cms.ts` dan `/studio` menampilkan instruksi konfigurasi.
